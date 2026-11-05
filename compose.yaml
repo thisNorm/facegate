@@ -1,0 +1,26 @@
+# 서버 PC(리눅스)에서: docker compose up -d --build
+# 설치 순서와 인증서, 시간 맞춤, 백업 복구는 docs/11_설치운영.md
+services:
+  gate-server:
+    build: .
+    image: facegate-server
+    restart: unless-stopped
+    # root가 아닌 출입 서버 전용 계정(facegate)으로. 번호는 저장소 맨 위 .env에 적는다 (docs/11 2장)
+    user: '${FACEGATE_UID:?docs/11 2장대로 .env에 FACEGATE_UID를 넣으세요}:${FACEGATE_GID:?docs/11 2장대로 .env에 FACEGATE_GID를 넣으세요}'
+    # 단말 연결 주소(QR)와 단말 영상 주소를 서버 PC의 사내망 IP로 알려야 해서 호스트 네트워크를 쓴다
+    network_mode: host
+    env_file: services/gate-server/.env
+    # .env의 빈 값이 이미지 기본값을 덮지 않도록 경로는 여기서 정한다
+    environment:
+      DB_PATH: /data/facegate.db
+      FILE_DIR: /data/files
+      BACKUP_DIR: /backup
+      ADMIN_WEB_DIR: /app/apps/admin-web/dist
+      GATES_FILE: /app/config/gates.json
+      TLS_CERT_FILE: /certs/server.crt
+      TLS_KEY_FILE: /certs/server.key
+    volumes:
+      - /srv/facegate/data:/data
+      # 백업은 데이터와 다른 디스크에 두는 것이 좋다
+      - /srv/facegate/backup:/backup
+      - /srv/facegate/certs:/certs:ro

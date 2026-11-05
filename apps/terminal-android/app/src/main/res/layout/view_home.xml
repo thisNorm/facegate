@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  연결된 단말의 평소 화면 (D-58). 출입 단말 대기 화면 구성을 따른다:
+  위 = 시계와 날짜, 게이트 이름과 연결 상태 / 가운데 = 사람 모양 틀 / 아래 = 방문객 호출, 구석의 작은 관리자 설정
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+
+    <com.example.facegate.FaceGuideView
+        android:id="@+id/face_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/shade_top" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/shade_bottom" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:format12Hour="HH:mm"
+            android:format24Hour="HH:mm"
+            android:includeFontPadding="false"
+            android:textColor="#FFFFFF"
+            android:textSize="52sp" />
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:format12Hour="M월 d일 EEEE"
+            android:format24Hour="M월 d일 EEEE"
+            android:textColor="#D9FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/home_gate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="#D9FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="34dp"
+        android:shadowColor="#99000000"
+        android:shadowRadius="6"
+        android:text="얼굴을 틀에 맞춰 주세요"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/home_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/notice_box"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:textColor="#ECECEA"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/home_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingHorizontal="32dp"
+        android:paddingBottom="28dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/visitor_call"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:background="@drawable/btn_call"
+            android:drawableStart="@drawable/ic_call"
+            android:drawablePadding="12dp"
+            android:drawableTint="#151619"
+            android:paddingHorizontal="36dp"
+            android:stateListAnimator="@null"
+            android:text="방문객 호출"
+            android:textAllCaps="false"
+            android:textColor="#151619"
+            android:textSize="22sp" />
+
+        <!-- 핸드폰으로 열기 QR (D-62). 서버에서 이 기능을 켰을 때만 보인다 -->
+        <Button
+            android:id="@+id/phone_qr"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/btn_call"
+            android:paddingHorizontal="32dp"
+            android:stateListAnimator="@null"
+            android:text="QR로 열기"
+            android:textAllCaps="false"
+            android:textColor="#151619"
+            android:textSize="22sp"
+            android:visibility="gone" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="end|center_vertical"
+            android:background="@drawable/btn_round"
+            android:contentDescription="관리자 설정"
+            android:scaleType="center"
+            android:src="@drawable/ic_settings" />
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/admin"
+        android:layout_width="440dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#F2151619"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/admin_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp" />
+    </ScrollView>
+</FrameLayout>

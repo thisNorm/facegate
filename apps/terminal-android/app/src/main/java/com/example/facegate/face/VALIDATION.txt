@@ -1,0 +1,35 @@
+Validation executed on 2026-11-04
+
+Build environment: local JDK 17, Android SDK 37, Gradle 9.8.2, AGP 9.4.1.
+Existing CRLF/non-executable gradlew left untouched; invoked a compatible Gradle
+wrapper from the sibling project with -p pointing to this project.
+
+Passed:
+- :app:testDebugUnitTest: 24 tests, zero failures (including 8 new policy tests).
+- :streaming:testDebugUnitTest: 5 tests, zero failures.
+- :app:assembleDebug and :app:assembleDebugAndroidTest.
+- Android x86_64 API 37 emulator instrumentation: OK (2 tests).
+  FaceRecognizerContractTest: exact Bitmap/RectF API, delayed live embedding,
+  explicit employee ID matching, gallery replacement/deletion, input ownership,
+  close lifecycle. Uses an injected deterministic backend.
+  OnnxModelSmokeTest: native ONNX CPU model loading, SCRFD on a blank synthetic
+  image, LVFace-T execution/alignment, finite normalized 512-D output. Uses the
+  actual supplied model files, not a mock backend.
+- ONNX metadata and SHA-256 hashes inspected for both separately supplied files.
+- Original application and streaming files verified unchanged except the two
+  dependency/test configuration files: app/build.gradle.kts and
+  gradle/libs.versions.toml. No production UI, camera or server wiring was added.
+- Code ZIP verified to contain only new/changed deliverable files, excluding
+  model weights, builds, caches, local SDK config, AI/IDE settings and datasets.
+
+Not established:
+- Recognition accuracy/false-accept or false-reject rates on real people.
+- RK3576 board camera orientation, calibrated distance/pose settings, memory,
+  thermal behavior, sustained inference speed, or NPU execution.
+- Gate-server, administrator console or actual door-control integration.
+  These are deliberately owned by the receiving team under section 3.
+- Commercial permission for the supplied pretrained weights. Both upstream
+  licence notices describe pretrained models as non-commercial research only.
+
+No local reference dataset, camera password, temporary RTSP input, server bypass,
+or test screen is included. The two instrumentation tests are in the test APK.

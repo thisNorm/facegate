@@ -1,0 +1,12 @@
+**/node_modules
+**/dist
+**/storage
+**/.env
+**/*.db
+**/*.db-*
+**/tsconfig.tsbuildinfo
+.git
+docs
+apps/terminal-android
+services/gate-server/tests
+services/gate-server/config/gates.json

@@ -1,0 +1,8 @@
+{
+  "type": "decision",
+  "event_key": 1,
+  "result": "GRANTED",
+  "at": "2026-10-28 08:51:03",
+  "name": "홍길동",
+  "department": "개발팀"
+}

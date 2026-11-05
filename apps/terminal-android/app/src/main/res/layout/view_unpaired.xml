@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 미연결 화면 (D-57). 누르는 버튼 없음. 오른쪽 절반은 투명해서 뒤의 카메라 미리보기가 보인다 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/unpaired"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#151619"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FaceGate"
+                android:textColor="#9A9994"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="16dp"
+                android:text="단말 연결이 필요합니다"
+                android:textColor="#ECECEA"
+                android:textSize="22sp" />
+
+            <TextView
+                style="@style/UnpairedStep"
+                android:text="1   관리자 웹 게이트 화면에서 단말 추가를 누릅니다" />
+
+            <TextView
+                style="@style/UnpairedStep"
+                android:text="2   나온 QR을 오른쪽 사각형에 비추거나" />
+
+            <TextView
+                style="@style/UnpairedStep"
+                android:text="3   QR을 쓸 수 없으면 아래 두 값을 웹에 입력합니다" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/unpaired_box"
+                android:columnCount="2"
+                android:padding="14dp">
+
+                <TextView
+                    style="@style/UnpairedLabel"
+                    android:text="단말 주소" />
+
+                <TextView
+                    android:id="@+id/unpaired_address"
+                    style="@style/UnpairedValue" />
+
+                <TextView
+                    style="@style/UnpairedLabel"
+                    android:text="연결 번호" />
+
+                <TextView
+                    android:id="@+id/unpaired_pin"
+                    style="@style/UnpairedValue" />
+            </GridLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="118dp"
+                android:layout_height="118dp"
+                android:layout_gravity="center"
+                android:background="@drawable/qr_frame" />
+
+            <TextView
+                android:id="@+id/unpaired_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#99151619"
+                android:gravity="center"
+                android:maxWidth="360dp"
+                android:padding="8dp"
+                android:text="QR을 찾는 중"
+                android:textColor="#ECECEA"
+                android:textSize="13sp"
+                android:translationY="120dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/unpaired_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#151619"
+        android:paddingStart="28dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="10dp"
+        android:textColor="#7C7B76"
+        android:textSize="11sp" />
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="UnpairedStep">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">#C9C8C3</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="UnpairedLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">#9A9994</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="UnpairedValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingVertical">3dp</item>
+        <item name="android:textColor">#ECECEA</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>

@@ -1,0 +1,174 @@
+[
+  {
+    "path": "det_10g.onnx",
+    "bytes": 16923827,
+    "inputs": [
+      {
+        "name": "input.1",
+        "element_type": 1,
+        "shape": [
+          1,
+          3,
+          "?",
+          "?"
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "448",
+        "element_type": 1,
+        "shape": [
+          12800,
+          1
+        ]
+      },
+      {
+        "name": "471",
+        "element_type": 1,
+        "shape": [
+          3200,
+          1
+        ]
+      },
+      {
+        "name": "494",
+        "element_type": 1,
+        "shape": [
+          800,
+          1
+        ]
+      },
+      {
+        "name": "451",
+        "element_type": 1,
+        "shape": [
+          12800,
+          4
+        ]
+      },
+      {
+        "name": "474",
+        "element_type": 1,
+        "shape": [
+          3200,
+          4
+        ]
+      },
+      {
+        "name": "497",
+        "element_type": 1,
+        "shape": [
+          800,
+          4
+        ]
+      },
+      {
+        "name": "454",
+        "element_type": 1,
+        "shape": [
+          12800,
+          10
+        ]
+      },
+      {
+        "name": "477",
+        "element_type": 1,
+        "shape": [
+          3200,
+          10
+        ]
+      },
+      {
+        "name": "500",
+        "element_type": 1,
+        "shape": [
+          800,
+          10
+        ]
+      }
+    ],
+    "opsets": [
+      {
+        "domain": "",
+        "version": 11
+      }
+    ],
+    "ir_version": 6,
+    "operators": {
+      "ai.onnx::Add": 16,
+      "ai.onnx::AveragePool": 3,
+      "ai.onnx::Concat": 2,
+      "ai.onnx::Conv": 58,
+      "ai.onnx::Gather": 4,
+      "ai.onnx::MaxPool": 1,
+      "ai.onnx::Mul": 3,
+      "ai.onnx::Relu": 36,
+      "ai.onnx::Reshape": 9,
+      "ai.onnx::Resize": 2,
+      "ai.onnx::Shape": 6,
+      "ai.onnx::Sigmoid": 3,
+      "ai.onnx::Slice": 2,
+      "ai.onnx::Transpose": 9,
+      "ai.onnx::Unsqueeze": 4
+    },
+    "external_initializers": 0,
+    "sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+    "license": "Upstream pretrained weights: non-commercial research only; no commercial approval supplied."
+  },
+  {
+    "path": "LVFace-T_Glint360K.onnx",
+    "bytes": 76653813,
+    "inputs": [
+      {
+        "name": "data",
+        "element_type": 1,
+        "shape": [
+          "batch_size",
+          3,
+          112,
+          112
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "964",
+        "element_type": 1,
+        "shape": [
+          "batch_size",
+          512
+        ]
+      }
+    ],
+    "opsets": [
+      {
+        "version": 17
+      }
+    ],
+    "ir_version": 8,
+    "operators": {
+      "ai.onnx::Add": 61,
+      "ai.onnx::BatchNormalization": 2,
+      "ai.onnx::Cast": 61,
+      "ai.onnx::Clip": 12,
+      "ai.onnx::Concat": 26,
+      "ai.onnx::Constant": 190,
+      "ai.onnx::Conv": 1,
+      "ai.onnx::Div": 12,
+      "ai.onnx::Gather": 73,
+      "ai.onnx::LayerNormalization": 25,
+      "ai.onnx::MatMul": 74,
+      "ai.onnx::Mul": 12,
+      "ai.onnx::Reshape": 26,
+      "ai.onnx::Shape": 38,
+      "ai.onnx::Slice": 1,
+      "ai.onnx::Softmax": 12,
+      "ai.onnx::Transpose": 37,
+      "ai.onnx::Unsqueeze": 73
+    },
+    "external_initializers": 0,
+    "sha256": "bf8da0e1e93c432d9a1d874a9ba0990f5859f970e8864b3990f2f33d11f9cdb3",
+    "license": "Upstream pretrained weights: non-commercial research only; no commercial approval supplied."
+  }
+]

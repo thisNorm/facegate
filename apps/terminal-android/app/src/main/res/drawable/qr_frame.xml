@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- QR 맞춤 사각형: 네 모서리만 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="118dp"
+    android:height="118dp"
+    android:viewportWidth="118"
+    android:viewportHeight="118">
+    <path
+        android:pathData="M1,23 L1,7 Q1,1 7,1 L23,1 M95,1 L111,1 Q117,1 117,7 L117,23 M117,95 L117,111 Q117,117 111,117 L95,117 M23,117 L7,117 Q1,117 1,111 L1,95"
+        android:strokeWidth="2"
+        android:strokeColor="#ECECEA" />
+</vector>

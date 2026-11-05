@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 키오스크(FR-T-06) 기기 소유자용. 쓰는 정책은 Kiosk.kt -->
+<device-admin>
+    <uses-policies />
+</device-admin>

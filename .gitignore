@@ -1,0 +1,35 @@
+# 빌드·의존성
+node_modules/
+dist/
+build/
+.gradle/
+local.properties
+
+# 비밀값·운영 데이터
+.env
+services/gate-server/config/gates.json
+storage/
+*.db
+*.db-wal
+*.db-shm
+
+# AI 모델 (라이선스 확인 전 저장소에 넣지 않음, 09 문서 4장)
+*.engine
+*.onnx
+
+# 에디터
+.idea/
+.vscode/
+
+# AI 개발 도구 파일 (Claude·Codex 등) — 저장소에 올리지 않음 (D-34)
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+.codex/
+.codex-runtime/
+AGENTS.md
+.omo/
+.superloopy/
+.superpowers/
+docs/superpowers/
+.tmp_*
